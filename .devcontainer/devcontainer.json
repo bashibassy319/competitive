@@ -1,25 +1,27 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "competitive-devcontainer",
-	// ubuntu with gcc
-	"dockerFile": "Dockerfile",
-	"features": {
-		"ghcr.io/devcontainers/features/go:1": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers/features/node:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-vscode.cpptools",
-				"formulahendry.code-runner",
-				"sumneko.lua",
-				"actboy168.lua-debug",
-				"ms-dotnettools.csharp"
-			]
-		}
-	},
-	// luabundler
-	"postCreateCommand": "npm install -g luabundler"
+    "name": "competitive-devcontainer",
+    "dockerFile": "Dockerfile",
+    "features": {
+        "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/devcontainers/features/python:1": {},
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers-contrib/features/npm-package:1": {
+            "package": "atcoder-cli"
+        },
+        "ghcr.io/akhildevelops/devcontainer-features/pip:0": {
+            "PACKAGES": "online-judge-tools"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "formulahendry.code-runner",
+                "sumneko.lua",
+                "actboy168.lua-debug",
+                "ms-dotnettools.csharp"
+            ]
+        }
+    },
+    "postCreateCommand": "npm install -g luabundler && cp -r atcoder-cli-nodejs ~/.config"
 }

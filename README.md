@@ -26,6 +26,25 @@ git clone https://github.com/ganyariya/competitive.git
 
 # How to use
 
+## oj & acc commands
+- Log in
+```bash
+acc login
+oj login https://atcoder.jp
+acc check-oj
+```
+
+- Add new contest
+```bash
+acc new abc001 # abc001 dir will be created
+cd abc001/a
+```
+
+- Run tests
+```bash
+oj t -c "go run ./main.go" -d tests/
+```
+
 ## Run
 
 You can write any code in `cpp`, `go`, and `python` directory.   
